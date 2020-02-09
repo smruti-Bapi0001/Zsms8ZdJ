@@ -11,5 +11,7 @@
 |
 */
 
-Route::get('/', 'ServiceRequestsController@index')->name('home');
+Route::get('/', 'ServiceRequestsController@index')->name('home');  
+Route::get('/createServiceTicket', 'ServiceRequestsController@create')->name('createServiceTicket');  
 Route::get('{id}', 'ServiceRequestsController@edit')->name('edit');
+Route::post('/createServiceRequest', 'ServiceRequestsController@store');
