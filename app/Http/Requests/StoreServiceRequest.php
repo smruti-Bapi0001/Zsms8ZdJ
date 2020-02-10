@@ -24,9 +24,17 @@ class StoreServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required','max:255'],
+            'name' => ['required','max:255'],
             'email' =>  ['required','email'],
-            'phone' => ['required','date'],
+            'phone' => ['required', 'numeric'],
+        ];
+    }
+
+    public function messages(){
+        return [
+            'name.required' => "Name is required",
+            'email.required' => "email is required" ,
+            'phone.required' => "phone is required",
         ];
     }
 }

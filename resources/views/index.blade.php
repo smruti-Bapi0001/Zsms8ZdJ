@@ -31,7 +31,9 @@
                 <td>{{ $request->client_name }}</td>
                 <td>{{ $request->status }}</td>
                 <td>{{ $request->updated_at->format('m/d/Y h:i a') }}</td>
-                <td><a href="{{ route('edit',[$request->id]) }}" class="btn btn-primary">EDIT</a></td>
+                <td><a href="{{ route('edit',[$request->id]) }}" class="btn btn-primary">EDIT</a>
+                <a href="javascript:void(0)" data-id = "{{ $request->id}}" class="btn btn-primary deleteRequest">DELETE</a>
+                </td>
               </tr>
               @endforeach
             </tbody>
