@@ -13,7 +13,7 @@ class VehicleModelTableSeeder extends Seeder
    */
   public function run(){
     $vehicleMakes = VehicleMakes::all();
-    $models = [
+   $models = [
       [
         'make'  => 'Jeep',
         'model' => 'Wrangler'
@@ -37,6 +37,22 @@ class VehicleModelTableSeeder extends Seeder
       [
         'make'  => 'Ford',
         'model' => 'F-150'
+      ],
+      [
+        'make'  => 'Dodge',
+        'model' => 'Ram 1500'
+      ],
+      [
+        'make'  => 'Dodge',
+        'model' => 'Ram Rebel'
+      ],
+      [
+        'make'  => 'Toyota',
+        'model' => 'Tacoma'
+      ],
+      [
+        'make'  => 'Toyota',
+        'model' => 'Tundra'
       ],
     ];
     foreach($models AS $model){

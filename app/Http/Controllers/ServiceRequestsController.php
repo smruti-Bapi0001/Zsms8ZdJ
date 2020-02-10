@@ -13,14 +13,12 @@ class ServiceRequestsController extends Controller {
    */
 
   public function store(StoreServiceRequest $request){
-    dd("sss");
-    $validator = $request->validate([
-                  'title' => 'required|max:255',
-                  'email' => 'required|email',
-                  'phone' => 'nullable|date',
-              ]);
+    $validator = $request->validated();
+    if ($validator->fails()) {
+      \Session::flash('error', $validator->messages()->first());
+      return redirect()->back()->withInput();
+    }
     
-    dd($validator);
         
   }
 

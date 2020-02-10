@@ -16,8 +16,8 @@
   <section class="bg-light">
     <div class="container">
         <div class="row">
-            <form name="frm" class="" action=" {!! url('/createServiceRequest') !!}" method="POST">
-            {{ csrf_field() }}
+            <form name="frm" method="POST" action="{{url('/createServiceRequest')}}" >
+            <input type="hidden" value="{{ csrf_token() }}" name="_token">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control"  placeholder="Enter name" name="name">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="form-group">
-                <button class="btn btn-success submitButton" type="submit" name="submitBtn">Submit</button>
+                <button class="btn btn-success submitButton" name="submitBtn">Submit</button>
             </div>
             
             </form>
